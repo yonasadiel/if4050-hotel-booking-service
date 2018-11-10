@@ -7,4 +7,10 @@ if __name__ == "__main__":
 
     from django.core.management import execute_from_command_line
 
+    # Override default port for `runserver` command
+    import django
+    django.setup()
+    from django.core.management.commands.runserver import Command as runserver
+    runserver.default_port = "8005"
+
     execute_from_command_line(sys.argv)
