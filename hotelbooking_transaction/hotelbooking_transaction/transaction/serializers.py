@@ -6,3 +6,4 @@ class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = ('date_paid', 'amount')
+        read_only_fields = ('booking_id', )
