@@ -7,6 +7,9 @@ class RoomType(models.Model):
     name = models.CharField(max_length=10)
     price = models.DecimalField(max_digits=14, decimal_places=2)
 
+    def __str__(self):
+        return self.name
+
 
 class Room(models.Model):
     room_number = models.CharField(max_length=3, null=False)
