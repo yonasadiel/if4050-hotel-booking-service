@@ -1,5 +1,5 @@
 from hotelbooking_room.room.models import Room, RoomType
-from hotelbooking_room.room.serializers import RoomSerializer
+from hotelbooking_room.room.serializers import RoomSerializer, RoomTypeSerializer
 from rest_framework import generics, views
 from rest_framework.response import Response
 
@@ -8,6 +8,11 @@ class RoomView(generics.RetrieveAPIView):
     lookup_field = 'room_number'
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
+
+
+class RoomTypeView(generics.ListAPIView):
+    queryset = RoomType.objects.all()
+    serializer_class = RoomTypeSerializer
 
 
 class RoomByTypeView(views.APIView):
