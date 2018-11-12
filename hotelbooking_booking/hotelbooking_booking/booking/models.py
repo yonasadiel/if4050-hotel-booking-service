@@ -5,6 +5,12 @@ import requests
 
 
 class Booking(models.Model):
+    BOOKING_STATUS_CHOICE = (
+        ('PENDING', 'PENDING'),
+        ('PAID', 'PAID'),
+        ('CANCELLED', 'CANCELLED')
+    )
+
     check_in = models.DateField()
     check_out = models.DateField()
     payment_name = models.CharField(max_length=100, null=True, blank=True)
@@ -13,6 +19,7 @@ class Booking(models.Model):
     room_type = models.IntegerField(null=True)
     price = models.DecimalField(max_digits=14, decimal_places=2)
     guest_id = models.IntegerField(null=True)
+    status = models.CharField(max_length=10, default="PENDING", choices=BOOKING_STATUS_CHOICE)
 
     def update_room(self):
         r = requests.get('http://localhost:8004/api/room/type/%d/' % (self.room_type))
