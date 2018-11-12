@@ -11,3 +11,9 @@ class ListGuestView(generics.ListCreateAPIView):
 class DetailGuestView(generics.RetrieveUpdateAPIView):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
+
+
+class DetailGuestByIdNumberView(generics.RetrieveUpdateAPIView):
+    lookup_field = 'identity_number'
+    queryset = Guest.objects.all()
+    serializer_class = GuestSerializer
