@@ -5,8 +5,8 @@ from hotelbooking_room.room.models import Room, RoomType
 class RoomTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = RoomType
-        fields = ('name', 'price')
-        read_only_fields = ('name', 'price')
+        fields = ('name', 'price', 'id')
+        read_only_fields = ('name', 'price', 'id')
 
 
 class RoomSerializer(serializers.ModelSerializer):
