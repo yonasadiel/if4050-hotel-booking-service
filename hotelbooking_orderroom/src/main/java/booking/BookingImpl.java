@@ -14,7 +14,6 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
-@SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
 @WebService
 public class BookingImpl {
 
@@ -64,14 +63,14 @@ public class BookingImpl {
     }
 
     @WebMethod
-    private int getGuestId(@WebParam(name = "id_card_number") String idCardNumber) {
+    public int getGuestId(@WebParam(name = "id_card_number") String idCardNumber) {
         initService();
         Guest guest = guestService.getGuestByIdCard(idCardNumber);
         return guest.id;
     }
 
     @WebMethod
-    private Guest createGuest(@WebParam(name = "guest") Guest guest) {
+    public Guest createGuest(@WebParam(name = "guest") Guest guest) {
         initService();
         return guestService.createGuest(guest);
     }
