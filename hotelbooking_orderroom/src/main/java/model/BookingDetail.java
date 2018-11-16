@@ -1,7 +1,4 @@
-package booking.model;
-
-import booking.model.Booking;
-import booking.model.Guest;
+package model;
 
 public class BookingDetail {
     public Booking booking;

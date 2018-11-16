@@ -1,10 +1,10 @@
 package booking;
 
-import booking.model.Booking;
-import booking.model.BookingDetail;
-import booking.model.Guest;
-import booking.service.BookingService;
-import booking.service.GuestService;
+import model.Booking;
+import model.BookingDetail;
+import model.Guest;
+import service.BookingService;
+import service.GuestService;
 import com.google.gson.Gson;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -22,7 +22,7 @@ public class BookingImpl {
     private BookingService bookingService;
 
     @WebMethod
-    public BookingDetail orderRoom(@WebParam(name = "booking") final Booking booking, @WebParam(name = "guest") Guest guest) {
+    public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) {
         initService();
         if (booking.checkOut.before(booking.checkIn)) {
             return new BookingDetail(booking, guest);
@@ -30,11 +30,11 @@ public class BookingImpl {
         int guestId = getGuestId(guest.identityNumber);
         if (guestId != -1) {
             booking.guestId = guestId;
-            insertBookingData(booking);
+            booking = createBookingData(booking);
         } else {
-            Guest newGuest = createNewGuest(guest);
+            Guest newGuest = createGuest(guest);
             booking.guestId = newGuest.id;
-            insertBookingData(booking);
+            booking = createBookingData(booking);
         }
         return new BookingDetail(booking, guest);
     }
@@ -58,9 +58,9 @@ public class BookingImpl {
     }
 
     @WebMethod
-    public void insertBookingData(@WebParam(name = "booking") Booking booking) {
+    public Booking createBookingData(@WebParam(name = "booking") Booking booking) {
         initService();
-        bookingService.createBooking(booking);
+        return bookingService.createBooking(booking);
     }
 
     @WebMethod
@@ -71,7 +71,7 @@ public class BookingImpl {
     }
 
     @WebMethod
-    private Guest createNewGuest(@WebParam(name = "guest") Guest guest) {
+    private Guest createGuest(@WebParam(name = "guest") Guest guest) {
         initService();
         return guestService.createGuest(guest);
     }

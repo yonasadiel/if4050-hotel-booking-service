@@ -1,6 +1,6 @@
-package booking.service;
+package service;
 
-import booking.model.Guest;
+import model.Guest;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
