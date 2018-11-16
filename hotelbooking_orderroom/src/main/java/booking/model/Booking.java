@@ -1,23 +1,31 @@
 package booking.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 public class Booking {
     public int id;
+    @SerializedName("payment_name")
     public String paymentName;
+    @SerializedName("payment_type")
     public String paymentType;
     public long price;
+    @SerializedName("room_type")
     public String typeRoom;
-    public Date checkin;
-    public Date checkout;
+    @SerializedName("check_in")
+    public Date checkIn;
+    @SerializedName("check_out")
+    public Date checkOut;
+    @SerializedName("guest_id")
+    public int guestId;
 
-    public Booking(int id, String paymentName, String paymentType, long price, String typeRoom, Date checkin, Date checkout) {
-        this.id = id;
+    public Booking(String paymentName, String paymentType, long price, String typeRoom, Date checkIn, Date checkOut) {
         this.paymentName = paymentName;
         this.paymentType = paymentType;
         this.price = price;
         this.typeRoom = typeRoom;
-        this.checkin = checkin;
-        this.checkout = checkout;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
     }
 }
