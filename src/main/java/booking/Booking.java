@@ -20,6 +20,7 @@ public class Booking {
 
     @WebMethod
     public boolean orderRoom(String name, String idCard, String email, int roomType, Date checkIn, Date checkOut) {
+        System.out.println(name);
         if (checkOut.before(checkIn)) {
             return false;
         }
@@ -35,6 +36,7 @@ public class Booking {
             e.printStackTrace();
             return false;
         }
+
         return true;
     }
 
