@@ -7,21 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e99a09d-c632-4b74-b9c3-cc82a218b662" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/booking/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-wsdl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello-wsdl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/hello_wsdl_war_exploded/WEB-INF/classes/booking/Booking.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hello_wsdl_war_exploded/WEB-INF/classes/booking/GuestRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hello_wsdl_war_exploded/WEB-INF/classes/booking/GuestRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hello_wsdl_war_exploded/WEB-INF/sun-jaxws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/hello_wsdl_war_exploded/WEB-INF/sun-jaxws.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/GuestRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/GuestRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/booking/Booking.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/booking/GuestRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/booking/GuestRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/sun-jaxws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/sun-jaxws.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,16 +24,17 @@
     <session id="-996914808">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.124" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.83" value="1" />
           <entry key="project.open.time.96" value="2" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -70,14 +60,14 @@
         <counts>
           <entry key="dummy" value="7" />
           <entry key="java" value="4734" />
-          <entry key="txt" value="14" />
+          <entry key="txt" value="63" />
           <entry key="xml" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="4734" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="PLAIN_TEXT" value="70" />
           <entry key="XML" value="91" />
         </counts>
       </usages-collector>
@@ -114,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,7 +115,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/booking/model/Booking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="315">
               <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
             </state>
           </provider>
@@ -134,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/Downloads/camunda-external-task-client-1.0.0.jar!/org/camunda/bpm/client/ExternalTaskClient.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="126">
               <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
@@ -161,7 +151,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
+            <state relative-caret-position="294">
               <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
                 <element signature="e#697#698#0" expanded="true" />
@@ -544,6 +534,7 @@
       <workItem from="1542010663135" duration="2644000" />
       <workItem from="1542351685599" duration="3806000" />
       <workItem from="1542355684503" duration="11297000" />
+      <workItem from="1542372360023" duration="63000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1542004567441</created>
@@ -552,11 +543,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542004567441</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Migrate to retrofit for some methods">
+      <created>1542372432641</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542372432642</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29858000" />
+    <option name="totallyTimeSpent" value="29921000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,10 +566,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1922" height="1061" extended-state="6" />
+    <frame x="349" y="174" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27267876" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27588046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -612,7 +610,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Migrate to retrofit for some methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate to retrofit for some methods" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/country/Country.java" />
@@ -645,22 +644,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/booking/model/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/Downloads/camunda-external-task-client-1.0.0.jar!/org/camunda/bpm/client/ExternalTaskClient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="126">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#762#932#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="483">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -671,30 +690,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/sun-jaxws.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/booking/model/Booking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="294">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
             <element signature="e#697#698#0" expanded="true" />
@@ -711,23 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/booking/GuestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/booking/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -735,6 +716,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/sun-jaxws.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
