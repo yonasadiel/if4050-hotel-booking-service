@@ -1,6 +1,6 @@
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
            version="2.0">
     <endpoint name="WebServicImpl"
-              implementation="booking.Booking"
+              implementation="booking.BookingService"
               url-pattern="/booking" />
 </endpoints>

@@ -16,7 +16,7 @@ public class GuestRequest {
     @SerializedName("mobile_phone")
     private String mobilePhone;
 
-    public GuestRequest(String name, String email, String identityNumber, String mobilePhone) {
+    public GuestRequest(String name, String identityNumber, String email, String mobilePhone) {
         this.name = name;
         this.email = email;
         this.identityNumber = identityNumber;
