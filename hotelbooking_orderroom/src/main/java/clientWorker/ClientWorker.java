@@ -1,16 +1,19 @@
+package clientWorker;
+
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.camunda.bpm.client.ExternalTaskClientBuilder;
 import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
+import org.camunda.bpm.client.impl.ExternalTaskClientImpl;
+import org.camunda.bpm.client.task.ExternalTaskHandler;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Client {
+public class ClientWorker {
 
-    public static void main(String[] args) {
-        ExternalTaskClient client = ExternalTaskClient.create()
-            .baseUrl("http://localhost:8080/engine-rest")
-            .build();
+    public void runClient() {
+        ExternalTaskClient client = new ExternalTaskClientBuilderImpl().baseUrl("http://localhost:8080/engine-rest").build();
+
 
         // subscribe to an external task topic as specified in the process
         client.subscribe("get-guest-id")
@@ -51,3 +54,4 @@ public class Client {
             .open();
     }
 }
+
