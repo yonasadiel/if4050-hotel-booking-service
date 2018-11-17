@@ -7,87 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e99a09d-c632-4b74-b9c3-cc82a218b662" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/artifacts/hotelbooking_payment_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/hotelbooking_payment.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/FastInoset.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/annotations-13.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/converter-gson-2.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/fluent-hc-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/gmbal-api-only.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/gson-2.8.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/ha-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/httpclient-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/httpclient-cache-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/httpclient-win-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/httpcore-4.4.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/httpmime-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jaxb-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jaxb-impl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jaxb-xjc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jaxws-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jaxws-rt.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jaxws-tools.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jna-4.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jna-platform-4.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/jsr181-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/kotlin-stdlib-1.3.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/kotlin-stdlib-common-1.3.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/mail.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/management-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/mimepull.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/okhttp-3.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/okio-2.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/policy.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/retrofit-2.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/saaj-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/saaj-impl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/stax-ex.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/stax2-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/streambuffer.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/lib/woodstox-core-asl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/model/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/model/BookingDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/model/Guest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/model/PaymentConfirmationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/payment/PaymentImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/service/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/src/main/java/service/GuestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/annotations-13.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/converter-gson-2.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/fluent-hc-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/gson-2.8.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/httpclient-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/httpclient-cache-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/httpclient-win-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/httpcore-4.4.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/httpmime-4.5.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/jna-4.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/jna-platform-4.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/kotlin-stdlib-1.3.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/kotlin-stdlib-common-1.3.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/okhttp-3.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/okio-2.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/lib/retrofit-2.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/sun-jaxws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hotelbooking_payment/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hello_wsdl_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/hello_wsdl_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/.idea/artifacts/hotelbooking_cancelbooking_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/.idea/libraries/JAX_WS_Glassfish___JAX_WS_2_2_RI___Metro_1_X___JWSDP_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/hotelbooking_cancelbooking.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/cancelbooking/CancelBookingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/model/Booking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/model/BookingDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/model/Guest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/model/PaymentConfirmationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/service/BookingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/src/main/java/service/GuestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/web/WEB-INF/sun-jaxws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hotelbooking_cancelbooking/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-wsdl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelbooking_orderroom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/booking/BookingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/booking/BookingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hotelbooking_payment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hotelbooking_payment/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -165,7 +103,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="10" />
+          <entry key="java" value="11" />
           <entry key="jsp" value="1" />
           <entry key="xml" value="2" />
         </counts>
@@ -173,7 +111,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="10" />
+          <entry key="JAVA" value="11" />
           <entry key="JSP" value="1" />
           <entry key="XML" value="2" />
         </counts>
@@ -181,14 +119,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="320" />
-          <entry key="txt" value="201" />
+          <entry key="txt" value="220" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="320" />
-          <entry key="PLAIN_TEXT" value="201" />
+          <entry key="PLAIN_TEXT" value="220" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -205,20 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Booking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/booking/BookingImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="78" column="87" selection-start-line="78" selection-start-column="87" selection-end-line="78" selection-end-column="87" />
+            <state relative-caret-position="267">
+              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -631,7 +560,7 @@
       <workItem from="1542355684503" duration="11297000" />
       <workItem from="1542372543913" duration="1742000" />
       <workItem from="1542381383365" duration="515000" />
-      <workItem from="1542390389421" duration="2213000" />
+      <workItem from="1542390389421" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1542004567441</created>
@@ -675,11 +604,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542381878857</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add payment service">
+      <created>1542392821307</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542392821307</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34328000" />
+    <option name="totallyTimeSpent" value="35142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,7 +630,7 @@
     <frame x="-1" y="-1" width="1922" height="1061" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28228387" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28228387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -746,7 +682,8 @@
     <MESSAGE value="Fix vcs using this as root directory" />
     <MESSAGE value="Imporve package structure" />
     <MESSAGE value="Removed other service class definition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed other service class definition" />
+    <MESSAGE value="Add payment service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add payment service" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/country/Country.java" />
@@ -831,10 +768,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../hotelbooking_payment/src/main/java/payment/PaymentImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/booking/BookingImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="78" column="87" selection-start-line="78" selection-start-column="87" selection-end-line="78" selection-end-column="87" />
+        <state relative-caret-position="267">
+          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
         </state>
       </provider>
     </entry>
