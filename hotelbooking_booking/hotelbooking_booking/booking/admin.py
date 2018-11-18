@@ -4,5 +4,5 @@ from hotelbooking_booking.booking.models import Booking
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ['room_number', 'check_in', 'check_out']
+    list_display = ['room_number', 'check_in', 'check_out', 'status', 'date_created']
     search_fields = ['room_number', 'payment_name']
