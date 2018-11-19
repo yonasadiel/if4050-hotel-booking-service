@@ -1,6 +1,11 @@
 package cancelbooking;
 
+import com.google.gson.Gson;
 import model.Booking;
+import model.BookingStatus;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import service.BookingService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -10,15 +15,28 @@ import java.util.Date;
 @WebService
 public class CancelBookingImpl {
 
+    private BookingService bookingService;
+
     @WebMethod
     public void cancelBooking(@WebParam(name = "booking") Booking booking) {
+        initService();
         Date now = new Date();
         if (now.after(booking.checkIn)) {
             sendFailStatus(booking);
         } else {
-            setBookingStatusAsCancelled(booking.id);
+            boolean status  = setBookingStatusAsCancelled(booking.id);
             refundPayment(booking.id);
             sendSuccessStatus(booking);
+        }
+    }
+
+    private void initService() {
+        if (bookingService == null) {
+            bookingService = new Retrofit.Builder()
+                    .baseUrl(BookingService.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                    .build()
+                    .create(BookingService.class);
         }
     }
 
@@ -28,8 +46,15 @@ public class CancelBookingImpl {
     }
 
     @WebMethod
-    public void setBookingStatusAsCancelled(@WebParam(name = "bookingId") int bookingId) {
-        // STUB
+    public boolean setBookingStatusAsCancelled(@WebParam(name = "bookingId") int bookingId) {
+        boolean status;
+        try {
+            Booking booking = bookingService.updateBookingStatus(bookingId, new BookingStatus(BookingStatus.CANCELLED));
+            status = true;
+        } catch (Exception e) {
+            status = false;
+        }
+        return status;
     }
 
     @WebMethod

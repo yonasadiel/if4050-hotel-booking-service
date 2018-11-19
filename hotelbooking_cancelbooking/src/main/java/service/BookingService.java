@@ -1,6 +1,7 @@
 package service;
 
 import model.Booking;
+import model.BookingStatus;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -14,4 +15,7 @@ public interface BookingService {
 
     @GET("api/booking/{booking_id}")
     Booking getBookingById(@Path("booking_id") int bookingId);
+
+    @POST("api/booking/{booking_id}")
+    Booking updateBookingStatus(@Path("booking_id") int bookingId, @Body BookingStatus bookingStatus);
 }

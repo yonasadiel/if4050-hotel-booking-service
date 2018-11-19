@@ -36,7 +36,7 @@ public class BookingImpl {
     }
 
     private void initService() {
-        if (guestService != null) {
+        if (guestService == null) {
             guestService = new Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create(new Gson()))
                     .baseUrl(GuestService.BASE_URL)
@@ -44,7 +44,7 @@ public class BookingImpl {
                     .create(GuestService.class);
         }
 
-        if (bookingService != null) {
+        if (bookingService == null) {
             bookingService = new Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create(new Gson()))
                     .baseUrl(BookingService.BASE_URL)
