@@ -5,6 +5,8 @@ import org.camunda.bpm.client.ExternalTaskClientBuilder;
 import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
 import org.camunda.bpm.client.impl.ExternalTaskClientImpl;
 import org.camunda.bpm.client.task.ExternalTaskHandler;
+import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.value.ObjectValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +15,6 @@ public class ClientWorker {
 
     public void runClient() {
         ExternalTaskClient client = new ExternalTaskClientBuilderImpl().baseUrl("http://localhost:8080/engine-rest").build();
-
 
         // subscribe to an external task topic as specified in the process
         client.subscribe("get-guest-id")
@@ -24,8 +25,13 @@ public class ClientWorker {
                 // Get a process variable
                 System.out.println("masuk get guest id");
                 Boolean exist = true;
+                ObjectValue isExist = Variables
+                    .objectValue(exist)
+                    .serializationDataFormat("application/xml")
+                    .create();
+
                 Map<String, Object> map = new HashMap<>();
-                map.put("status", exist);
+                map.put("status", isExist);
                 // Complete the task
                 externalTaskService.complete(externalTask, map);
             })
