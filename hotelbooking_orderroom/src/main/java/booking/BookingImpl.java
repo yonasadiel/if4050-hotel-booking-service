@@ -23,18 +23,15 @@ public class BookingImpl {
     @WebMethod
     public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) {
         initService();
-        if (booking.checkOut.before(booking.checkIn)) {
-            return new BookingDetail(booking, guest);
-        }
         int guestId = getGuestId(guest.identityNumber);
         if (guestId != -1) {
             booking.guestId = guestId;
-            booking = createBookingData(booking);
         } else {
             Guest newGuest = createGuest(guest);
             booking.guestId = newGuest.id;
-            booking = createBookingData(booking);
         }
+        booking = createBookingData(booking);
+
         return new BookingDetail(booking, guest);
     }
 
@@ -65,8 +62,12 @@ public class BookingImpl {
     @WebMethod
     public int getGuestId(@WebParam(name = "id_card_number") String idCardNumber) {
         initService();
-        Guest guest = guestService.getGuestByIdCard(idCardNumber);
-        return guest.id;
+        try {
+            Guest guest = guestService.getGuestByIdCard(idCardNumber);
+            return guest.id;
+        } catch (Exception e) {
+            return -1;
+        }
     }
 
     @WebMethod
