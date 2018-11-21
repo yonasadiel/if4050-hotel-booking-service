@@ -1,10 +1,9 @@
-package client_worker;
+package clientworker;
 
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 import booking.BookingImpl;
