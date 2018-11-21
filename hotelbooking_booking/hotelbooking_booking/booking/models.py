@@ -47,9 +47,9 @@ class Booking(models.Model):
         rooms = r.json()
         available_rooms = []
         for room in rooms:
-            bookings_with_same_room = self.objects.filter(room_number=room.get('room_number'))
+            bookings_with_same_room = Booking.objects.filter(room_number=room.get('room_number'))
             possible = True
-            one_hour_before = datetime.datetime.now() - datetime.timedelta(hour=1)
+            one_hour_before = datetime.now(timezone.utc) - timedelta(hours=1)
             for booking_with_same_room in bookings_with_same_room:
                 if (intersect(self, booking_with_same_room)):
                     if (booking_with_same_room.date_created >= one_hour_before):
