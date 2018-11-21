@@ -19,10 +19,10 @@
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="SequenceFlow_1iv9ofb" sourceRef="Task_0s9sh8h" targetRef="ExclusiveGateway_11tlga0" />
     <bpmn:sequenceFlow id="SequenceFlow_0lm1spa" name="Yes" sourceRef="ExclusiveGateway_11tlga0" targetRef="ExclusiveGateway_1uv150g">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${guestId&gt;0}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${guest_id!="-1"}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0isnx8v" name="No" sourceRef="ExclusiveGateway_11tlga0" targetRef="Task_04puz8o">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${guestId&lt;0}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${guest_id=="-1"}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0yo2y4c" sourceRef="Task_04puz8o" targetRef="ExclusiveGateway_1uv150g" />
     <bpmn:sequenceFlow id="SequenceFlow_1fr2ym2" sourceRef="ExclusiveGateway_1uv150g" targetRef="Task_1osr1fm" />

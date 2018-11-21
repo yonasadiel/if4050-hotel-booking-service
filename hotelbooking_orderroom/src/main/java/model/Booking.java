@@ -14,13 +14,13 @@ public class Booking {
     @SerializedName("room_type")
     public int typeRoom;
     @SerializedName("check_in")
-    public Date checkIn;
+    public String checkIn;
     @SerializedName("check_out")
-    public Date checkOut;
+    public String checkOut;
     @SerializedName("guest_id")
     public int guestId;
 
-    public Booking(String paymentName, String paymentType, long price, int typeRoom, Date checkIn, Date checkOut) {
+    public Booking(String paymentName, String paymentType, long price, int typeRoom, String checkIn, String checkOut) {
         this.paymentName = paymentName;
         this.paymentType = paymentType;
         this.price = price;
