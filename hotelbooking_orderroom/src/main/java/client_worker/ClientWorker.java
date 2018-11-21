@@ -1,16 +1,17 @@
 package client_worker;
 
 import org.camunda.bpm.client.ExternalTaskClient;
-import org.camunda.bpm.client.ExternalTaskClientBuilder;
 import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
-import org.camunda.bpm.client.impl.ExternalTaskClientImpl;
-import org.camunda.bpm.client.task.ExternalTaskHandler;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import booking.BookingImpl;
 import model.Booking;
+import model.Guest;
+import org.camunda.bpm.engine.variable.Variables;
+import org.camunda.bpm.engine.variable.value.IntegerValue;
 
 public class ClientWorker {
 
@@ -22,8 +23,9 @@ public class ClientWorker {
             .handler((externalTask, externalTaskService) -> {
                 String identityNumber = (String) externalTask.getVariable("identityNumber");
 
-                BookingImpl bookingImpl = BookingImpl();
-                int guestId = bookingImpl.getGuestId(identityNumber);
+                BookingImpl bookingImpl = new BookingImpl();
+
+                IntegerValue guestId = Variables.integerValue(bookingImpl.getGuestId(identityNumber));
 
                 Map<String, Object> vars = new HashMap<>();
                 vars.put("guestId", guestId);
@@ -41,10 +43,10 @@ public class ClientWorker {
 
                 Guest guest = new Guest(email, identityNumber, mobilePhone, name);
 
-                BookingImpl bookingImpl = BookingImpl();
+                BookingImpl bookingImpl = new BookingImpl();
                 Guest newGuest = bookingImpl.createGuest(guest);
 
-                int guestId = newGuest.id;
+                IntegerValue guestId = Variables.integerValue(newGuest.id);
 
                 Map<String, Object> vars = new HashMap<>();
                 vars.put("guestId", guestId);
@@ -57,16 +59,16 @@ public class ClientWorker {
             .handler((externalTask, externalTaskService) -> {
                 String paymentName = (String) externalTask.getVariable("paymentName");
                 String paymentType = (String) externalTask.getVariable("paymentType");
-                long price = (long) externalTask.getVariable("price");
-                int typeRoom = (int) externalTask.getVariable("typeRoom");
+                long price = externalTask.getVariable("price");
+                int typeRoom = externalTask.getVariable("typeRoom");
                 Date checkIn = (Date) externalTask.getVariable("checkIn");
                 Date checkOut = (Date) externalTask.getVariable("checkOut");
-                int guestId = (int) externalTask.getVariable("guestId");
+                int guestId = externalTask.getVariable("guestId");
 
                 Booking booking = new Booking(paymentName, paymentType, price, typeRoom, checkIn, checkOut);
                 booking.guestId = guestId;
 
-                BookingImpl bookingImpl = BookingImpl();
+                BookingImpl bookingImpl = new BookingImpl();
                 bookingImpl.createBookingData(booking);
 
                 externalTaskService.complete(externalTask);
