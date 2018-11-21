@@ -18,9 +18,11 @@
       <bpmn:outgoing>SequenceFlow_0isnx8v</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="SequenceFlow_1iv9ofb" sourceRef="Task_0s9sh8h" targetRef="ExclusiveGateway_11tlga0" />
-    <bpmn:sequenceFlow id="SequenceFlow_0lm1spa" name="Yes" sourceRef="ExclusiveGateway_11tlga0" targetRef="ExclusiveGateway_1uv150g" />
+    <bpmn:sequenceFlow id="SequenceFlow_0lm1spa" name="Yes" sourceRef="ExclusiveGateway_11tlga0" targetRef="ExclusiveGateway_1uv150g">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${isExist}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0isnx8v" name="No" sourceRef="ExclusiveGateway_11tlga0" targetRef="Task_04puz8o">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!exist}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!isExist}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:exclusiveGateway id="ExclusiveGateway_1uv150g">
       <bpmn:incoming>SequenceFlow_0lm1spa</bpmn:incoming>
