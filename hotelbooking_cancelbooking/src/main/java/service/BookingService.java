@@ -1,17 +1,15 @@
 package service;
 
 import model.Booking;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
+import model.BookingStatusChangeRequest;
+import retrofit2.http.*;
 
 public interface BookingService {
-    public String BASE_URL = "";
+    public String BASE_URL = "http://127.0.0.1:8001/";
 
-    @POST("api/booking/?format=json")
-    Booking createBooking(@Body Booking booking);
-
-    @GET("api/booking/{booking_id}")
+    @GET("api/booking/{booking_id}/?format=json")
     Booking getBookingById(@Path("booking_id") int bookingId);
+
+    @PUT("api/booking/{booking_id}/?format=json")
+    Booking setBookingStatus(@Path("booking_id") int bookingId, @Body BookingStatusChangeRequest status);
 }

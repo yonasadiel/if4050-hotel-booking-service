@@ -1,44 +1,84 @@
 package cancelbooking;
 
-import model.Booking;
+import com.google.gson.Gson;
+import model.*;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import service.BookingService;
+import service.CamundaService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.io.IOException;
 import java.util.Date;
 
 @WebService
 public class CancelBookingImpl {
+    BookingService bookingService;
+    CamundaService camundaService;
 
     @WebMethod
-    public void cancelBooking(@WebParam(name = "booking") Booking booking) {
-        Date now = new Date();
-        if (now.after(booking.checkIn)) {
-            sendFailStatus(booking);
-        } else {
-            setBookingStatusAsCancelled(booking.id);
-            refundPayment(booking.id);
-            sendSuccessStatus(booking);
+    public void cancelBooking(@WebParam(name = "booking") Booking booking, @WebParam(name = "refundAccount") String refundAccount) {
+        initService();
+        try {
+            camundaService.orderRoom(
+                    new Container<>(
+                            new CancelBookingCamunda(
+                                    booking.id,
+                                    refundAccount
+                            )
+                    )
+            ).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    @WebMethod
-    public void sendFailStatus(@WebParam(name = "booking") Booking booking) {
+    private void initService() {
+        if (bookingService == null) {
+            bookingService = new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                    .baseUrl(BookingService.BASE_URL)
+                    .build()
+                    .create(BookingService.class);
+        }
+        if (camundaService == null) {
+            camundaService = new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                    .baseUrl(CamundaService.BASE_URL)
+                    .build()
+                    .create(CamundaService.class);
+        }
+    }
+
+    public Booking retrieveBookingData(int bookingId) {
+        initService();
+        return bookingService.getBookingById(bookingId);
+    }
+
+    public boolean checkCheckinTime(Date checkIn) {
+        initService();
+        Date now = new Date();
+        return now.before(checkIn);
+    }
+
+    public void sendFailStatus(Booking booking) {
         // STUB
     }
 
-    @WebMethod
-    public void setBookingStatusAsCancelled(@WebParam(name = "bookingId") int bookingId) {
-        // STUB
+    public void setBookingStatusAsCancelled(int bookingId) {
+        initService();
+        BookingStatusChangeRequest bookingStatusChangeRequest = new BookingStatusChangeRequest();
+        bookingStatusChangeRequest.status = BookingStatus.CANCELLED;
+        bookingService.setBookingStatus(bookingId, bookingStatusChangeRequest);
     }
 
-    @WebMethod
-    public void refundPayment(@WebParam(name = "bookingId") int bookingId) {
-        // STUB
+    public void refundPayment(String refundAccount) {
+        // will be implemented after payment gateway works
     }
 
-    @WebMethod
-    public void sendSuccessStatus(@WebParam(name = "booking") Booking booking) {
+    public void sendSuccessStatus(Booking booking) {
         // STUB
     }
 }
