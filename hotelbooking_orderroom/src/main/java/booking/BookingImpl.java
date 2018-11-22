@@ -45,6 +45,7 @@ public class BookingImpl {
             e.printStackTrace();
         }
 
+        // TODO: return new booking
         return new BookingDetail(booking, guest);
     }
 

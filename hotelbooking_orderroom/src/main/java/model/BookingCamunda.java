@@ -29,8 +29,8 @@ public class BookingCamunda extends CamundaModel {
             String paymentType,
             String paymentName,
             int roomType,
-            String checkIn,
-            String checkOut,
+            Date checkIn,
+            Date checkOut,
             String identityNumber,
             String name,
             String email,
@@ -39,8 +39,8 @@ public class BookingCamunda extends CamundaModel {
         this.paymentName = new CamundaStringObject(paymentName);
 
         this.roomType = new CamundaStringObject(String.valueOf(roomType));
-        this.checkIn = new CamundaStringObject(checkIn);
-        this.checkOut = new CamundaStringObject(checkOut);
+        this.checkIn = new CamundaStringObject(new SimpleDateFormat("yyyy-MM-dd").format(checkIn));
+        this.checkOut = new CamundaStringObject(new SimpleDateFormat("yyyy-MM-dd").format(checkOut));
         this.identityNumber = new CamundaStringObject(identityNumber);
         this.name = new CamundaStringObject(name);
         this.email = new CamundaStringObject(email);
