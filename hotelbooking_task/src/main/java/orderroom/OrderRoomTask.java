@@ -12,6 +12,7 @@ import service.GuestService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.io.IOException;
 
 @WebService
 public class OrderRoomTask {
@@ -20,7 +21,7 @@ public class OrderRoomTask {
     private BookingService bookingService;
 
     @WebMethod
-    public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) {
+    public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) throws IOException {
         initService();
         int guestId = getGuestId(guest.identityNumber);
         if (guestId != -1) {
@@ -53,16 +54,16 @@ public class OrderRoomTask {
     }
 
     @WebMethod
-    public Booking createBookingData(@WebParam(name = "booking") Booking booking) {
+    public Booking createBookingData(@WebParam(name = "booking") Booking booking) throws IOException {
         initService();
-        return bookingService.createBooking(booking);
+        return bookingService.createBooking(booking).execute().body();
     }
 
     @WebMethod
     public int getGuestId(@WebParam(name = "id_card_number") String idCardNumber) {
         initService();
         try {
-            Guest guest = guestService.getGuestByIdCard(idCardNumber);
+            Guest guest = guestService.getGuestByIdCard(idCardNumber).execute().body();
             return guest.id;
         } catch (Exception e) {
             return -1;
@@ -70,8 +71,8 @@ public class OrderRoomTask {
     }
 
     @WebMethod
-    public Guest createGuest(@WebParam(name = "guest") Guest guest) {
+    public Guest createGuest(@WebParam(name = "guest") Guest guest) throws IOException {
         initService();
-        return guestService.createGuest(guest);
+        return guestService.createGuest(guest).execute().body();
     }
 }

@@ -35,7 +35,7 @@
     </bpmn:sequenceFlow>
     <bpmn:endEvent id="EndEvent_1njf9gh" name="Booking Cancellation Failed">
       <bpmn:incoming>SequenceFlow_1saq5cm</bpmn:incoming>
-      <bpmn:messageEventDefinition />
+      <bpmn:messageEventDefinition messageRef="Message_1ynlwkv" camunda:type="external" camunda:topic="booking-cancellation-failed" />
     </bpmn:endEvent>
     <bpmn:serviceTask id="retrieve-booking-data" name="Retrieve Booking Data" camunda:type="external" camunda:topic="retrieve-booking-data">
       <bpmn:incoming>SequenceFlow_1wmg46u</bpmn:incoming>
