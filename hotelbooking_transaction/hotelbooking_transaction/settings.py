@@ -25,9 +25,7 @@ SECRET_KEY = '-iogghy1%&o*b*m+=gyguk0zjub(_#6s+f9mmt5!q#u5h*v84h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('PRODUCTION', True)
 
-ALLOWED_HOSTS = [
-    '167.225.35.*',
-]
+ALLOWED_HOSTS = ['167.205.35.%s' % (i) for i in range(256)]
 
 
 # Application definition
