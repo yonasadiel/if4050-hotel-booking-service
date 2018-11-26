@@ -53,14 +53,12 @@ public class OrderRoomTask {
         }
     }
 
-    @WebMethod
-    public Booking createBookingData(@WebParam(name = "booking") Booking booking) throws IOException {
+    public Booking createBookingData(Booking booking) throws IOException {
         initService();
         return bookingService.createBooking(booking).execute().body();
     }
 
-    @WebMethod
-    public int getGuestId(@WebParam(name = "id_card_number") String idCardNumber) {
+    public int getGuestId(String idCardNumber) {
         initService();
         try {
             Guest guest = guestService.getGuestByIdCard(idCardNumber).execute().body();
@@ -70,8 +68,7 @@ public class OrderRoomTask {
         }
     }
 
-    @WebMethod
-    public Guest createGuest(@WebParam(name = "guest") Guest guest) throws IOException {
+    public Guest createGuest(Guest guest) throws IOException {
         initService();
         return guestService.createGuest(guest).execute().body();
     }

@@ -51,7 +51,7 @@ class DetailBookingView(views.APIView):
                     request_serializer.is_valid(raise_exception=True)
 
                     new_booking_status = request_serializer.validated_data.get('status', booking.status)
-                    if (new_booking_status != 'CANCELLED'):
+                    if (new_booking_status == 'PENDING'):
                         new_booking_status = booking.status
 
                     booking.check_in = request_serializer.validated_data.get('check_in', booking.check_in)

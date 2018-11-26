@@ -1,20 +1,22 @@
 package clientworker;
 
-import model.Guest;
-import orderroom.OrderRoomTask;
-import org.camunda.bpm.client.ExternalTaskClient;
-import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import cancelbooking.CancelBookingTask;
-import model.Booking;
+import org.camunda.bpm.client.ExternalTaskClient;
+import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
 import org.camunda.bpm.engine.variable.Variables;
 import org.camunda.bpm.engine.variable.value.StringValue;
+
+import model.Booking;
+import model.Guest;
+
+import orderroom.OrderRoomTask;
+import payment.PaymentTask;
+import cancelbooking.CancelBookingTask;
 
 public class ClientWorker {
 
@@ -155,6 +157,44 @@ public class ClientWorker {
 
                     CancelBookingTask cancelBookingImpl = new CancelBookingTask();
                     cancelBookingImpl.refundPayment(refundAccount);
+
+                    externalTaskService.complete(externalTask);
+                })
+                .open();
+
+        client.subscribe("retrieve-booking-status")
+                .lockDuration(10000)
+                .handler((externalTask, externalTaskService) -> {
+                    String bookingId = (String) externalTask.getVariable("booking_id");
+
+                    PaymentTask paymentTask= new PaymentTask();
+
+                    Booking booking = null;
+                    try {
+                        booking = paymentTask.retrieveBookingStatus(Integer.parseInt(bookingId));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Map<String, Object> vars = new HashMap<>();
+                    vars.put("booking_status", booking.status);
+
+                    externalTaskService.complete(externalTask, vars);
+                })
+                .open();
+
+        client.subscribe("change-booking-status")
+                .lockDuration(10000)
+                .handler((externalTask, externalTaskService) -> {
+                    System.out.println("a");
+                    String bookingId= (String) externalTask.getVariable("booking_id");
+
+                    PaymentTask paymentTask = new PaymentTask();
+                    try {
+                        paymentTask.confirmBookingStatus(Integer.parseInt(bookingId));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                     externalTaskService.complete(externalTask);
                 })

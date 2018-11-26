@@ -1,9 +1,9 @@
 package payment;
 
-import model.Booking;
-import model.BookingDetail;
-import model.Guest;
-import model.PaymentConfirmationRequest;
+import com.google.gson.Gson;
+import model.*;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import service.BookingService;
 import service.GuestService;
 
@@ -31,12 +31,28 @@ public class PaymentTask {
         return new BookingDetail(booking, guest);
     }
 
-    @WebMethod
-    public void confirmBookingStatus(int bookingId) {
-        // STUB
+    public Booking retrieveBookingStatus(int bookingId) throws IOException {
+        initService();
+        return bookingService.getBookingById(bookingId).execute().body();
     }
 
-    @WebMethod
+    private void initService() {
+        if (bookingService == null) {
+            bookingService = new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                    .baseUrl(BookingService.BASE_URL)
+                    .build()
+                    .create(BookingService.class);
+        }
+    }
+
+    public void confirmBookingStatus(int bookingId) throws IOException {
+        initService();
+        BookingStatusChangeRequest bookingStatusChangeRequest = new BookingStatusChangeRequest();
+        bookingStatusChangeRequest.status = BookingStatus.PAID;
+        bookingService.setBookingStatus(bookingId, bookingStatusChangeRequest).execute();
+    }
+
     public void sendReceipt(int bookingId, int guestId) {
         // STUB
     }
