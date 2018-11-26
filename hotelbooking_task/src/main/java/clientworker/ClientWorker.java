@@ -186,7 +186,6 @@ public class ClientWorker {
         client.subscribe("change-booking-status")
                 .lockDuration(10000)
                 .handler((externalTask, externalTaskService) -> {
-                    System.out.println("a");
                     String bookingId= (String) externalTask.getVariable("booking_id");
 
                     PaymentTask paymentTask = new PaymentTask();
