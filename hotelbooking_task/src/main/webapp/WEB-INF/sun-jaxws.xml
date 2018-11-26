@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
+
+    <endpoint
+            name='OrderRoom'
+            implementation='orderroom.OrderRoomTask'
+            url-pattern='/OrderRoomTask'/>
+    <endpoint
+            name="CancelBooking"
+            implementation="cancelbooking.CancelBookingTask"
+            url-pattern="/CancelBookingTask"/>
+    <endpoint
+            name="Payment"
+            implementation="payment.PaymentTask"
+            url-pattern="/PaymentTask"/>
+</endpoints>
