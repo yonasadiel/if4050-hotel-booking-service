@@ -119,11 +119,19 @@ public class ClientWorker {
                     int roomType = Integer.parseInt(externalTask.getVariable("room-type"));
 
                     OrderRoomTask task = new OrderRoomTask();
+                    String paymentId = null;
                     try {
-                        String paymentId = task.sendPaymentInformation(paymentName, roomType);
+                        paymentId = task.sendPaymentInformation(paymentName, roomType);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
+                    Map<String, Object> vars = new HashMap<>();
+                    if (paymentId != null) {
+                        vars.put("payment-id", paymentId);
+                    }
+                    
+                    externalTaskService.complete(externalTask, vars);
                 }));
 
         client.subscribe("check-checkin-time")
