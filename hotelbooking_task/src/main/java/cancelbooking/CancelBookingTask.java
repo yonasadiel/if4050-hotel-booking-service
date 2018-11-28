@@ -11,20 +11,18 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @WebService
 public class CancelBookingTask {
-    BookingService bookingService;
-    CamundaService camundaService;
+    private BookingService bookingService;
+    private CamundaService camundaService;
 
     @WebMethod
     public void cancelBooking(@WebParam(name = "booking") Booking booking, @WebParam(name = "refundAccount") String refundAccount) {
         initService();
         try {
-            camundaService.orderRoom(
+            camundaService.cancelBooking(
                     new Container<>(
                             new CancelBookingCamunda(
                                     booking.id,

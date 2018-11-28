@@ -14,16 +14,4 @@ public class CancelBookingCamunda extends CamundaModel {
         this.bookingId = new CamundaStringObject(String.valueOf(bookingId));
         this.refundAccount= new CamundaStringObject(refundAccount);
     }
-
-    class CamundaStringObject {
-        @SerializedName("value")
-        public String value;
-        @SerializedName("type")
-        public String valType;
-
-        public CamundaStringObject(String value) {
-            this.value = value;
-            this.valType = "string";
-        }
-    }
 }

@@ -1,36 +1,33 @@
 package orderroom;
 
 import com.google.gson.Gson;
-import model.Booking;
-import model.BookingDetail;
-import model.Guest;
+import model.*;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import service.BookingService;
+import service.CamundaService;
 import service.GuestService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import java.io.IOException;
 
 @WebService
 public class OrderRoomTask {
 
     private GuestService guestService;
     private BookingService bookingService;
+    private CamundaService camundaService;
 
     @WebMethod
     public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) {
         initService();
-        int guestId = getGuestId(guest.identityNumber);
-        if (guestId != -1) {
-            booking.guestId = guestId;
-        } else {
-            Guest newGuest = createGuest(guest);
-            booking.guestId = newGuest.id;
+        try {
+            camundaService.orderRoom(new Container<>(new OrderRoomCamunda(booking, guest))).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        booking = createBookingData(booking);
-
         return new BookingDetail(booking, guest);
     }
 
@@ -49,6 +46,13 @@ public class OrderRoomTask {
                     .baseUrl(BookingService.BASE_URL)
                     .build()
                     .create(BookingService.class);
+        }
+        if (camundaService == null) {
+            camundaService = new Retrofit.Builder()
+                    .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                    .baseUrl(CamundaService.BASE_URL)
+                    .build()
+                    .create(CamundaService.class);
         }
     }
 
