@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import cancelbooking.CancelBookingTask;
+import orderroom.OrderRoomTask;
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.camunda.bpm.client.impl.ExternalTaskClientBuilderImpl;
 import org.camunda.bpm.engine.variable.Variables;
@@ -14,9 +16,8 @@ import org.camunda.bpm.engine.variable.value.StringValue;
 import model.Booking;
 import model.Guest;
 
-import orderroom.OrderRoomTask;
+import payment.Payment;
 import payment.PaymentTask;
-import cancelbooking.CancelBookingTask;
 
 public class ClientWorker {
 
@@ -28,9 +29,9 @@ public class ClientWorker {
                 .handler((externalTask, externalTaskService) -> {
                     String identityNumber = (String) externalTask.getVariable("identity_number");
 
-                    OrderRoomTask orderRoomTask = new OrderRoomTask();
+                    OrderRoomTask orderRoom = new OrderRoomTask();
 
-                    StringValue guestId = Variables.stringValue(String.valueOf(orderRoomTask.getGuestId(identityNumber)));
+                    StringValue guestId = Variables.stringValue(String.valueOf(orderRoom.getGuestId(identityNumber)));
 
                     Map<String, Object> vars = new HashMap<>();
                     vars.put("guest_id", guestId);
@@ -49,10 +50,10 @@ public class ClientWorker {
 
                     Guest guest = new Guest(email, identityNumber, mobilePhone, name);
 
-                    OrderRoomTask orderRoomTask = new OrderRoomTask();
+                    OrderRoomTask orderRoom = new OrderRoomTask();
                     Guest newGuest = null;
                     try {
-                        newGuest = orderRoomTask.createGuest(guest);
+                        newGuest = orderRoom.createGuest(guest);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -80,8 +81,8 @@ public class ClientWorker {
                         Booking booking = new Booking(paymentName, paymentType, 0, typeRoom, checkIn, checkOut);
                         booking.guestId = guestId;
 
-                        OrderRoomTask orderRoomTask = new OrderRoomTask();
-                        orderRoomTask.createBookingData(booking);
+                        OrderRoomTask orderRoom = new OrderRoomTask();
+                        orderRoom.createBookingData(booking);
 
                         externalTaskService.complete(externalTask);
                     } catch (Exception e) {

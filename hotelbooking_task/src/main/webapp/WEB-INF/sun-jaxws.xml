@@ -4,14 +4,14 @@
 
     <endpoint
             name='OrderRoom'
-            implementation='orderroom.OrderRoomTask'
+            implementation='orderroom.OrderRoom'
             url-pattern='/OrderRoomTask'/>
     <endpoint
             name="CancelBooking"
-            implementation="cancelbooking.CancelBookingTask"
+            implementation="cancelbooking.CancelBooking"
             url-pattern="/CancelBookingTask"/>
     <endpoint
             name="Payment"
-            implementation="payment.PaymentTask"
+            implementation="payment.Payment"
             url-pattern="/PaymentTask"/>
 </endpoints>
