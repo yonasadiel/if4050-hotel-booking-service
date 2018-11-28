@@ -13,7 +13,7 @@
   <bpmn:process id="payment-confirmation" isExecutable="true">
     <bpmn:sequenceFlow id="SequenceFlow_0m71g6d" sourceRef="StartEvent_1" targetRef="Task_0d7n7lh" />
     <bpmn:sequenceFlow id="SequenceFlow_1emzspl" name="Yes" sourceRef="ExclusiveGateway_0owv0pk" targetRef="Task_12fwrc8">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${hasPaid}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${has_paid}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_0h6bu84" name="No" sourceRef="ExclusiveGateway_0owv0pk" targetRef="EndEvent_1cf0jtv">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!hasPaid}</bpmn:conditionExpression>
