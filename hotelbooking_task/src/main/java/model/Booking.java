@@ -8,7 +8,8 @@ public class Booking {
     public String paymentName;
     @SerializedName("payment_type")
     public String paymentType;
-    public long price;
+    @SerializedName("payment_id")
+    public String paymentId;
     @SerializedName("room_type")
     public int typeRoom;
     @SerializedName("check_in")
@@ -19,10 +20,9 @@ public class Booking {
     public int guestId;
     public String status;
 
-    public Booking(String paymentName, String paymentType, long price, int typeRoom, String checkIn, String checkOut) {
+    public Booking(String paymentName, String paymentType, int typeRoom, String checkIn, String checkOut) {
         this.paymentName = paymentName;
         this.paymentType = paymentType;
-        this.price = price;
         this.typeRoom = typeRoom;
         this.checkIn = checkIn;
         this.checkOut = checkOut;

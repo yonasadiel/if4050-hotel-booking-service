@@ -78,7 +78,7 @@ public class ClientWorker {
                         String checkOut = externalTask.getVariable("check_out");
                         int guestId = Integer.parseInt(externalTask.getVariable("guest_id"));
 
-                        Booking booking = new Booking(paymentName, paymentType, 0, typeRoom, checkIn, checkOut);
+                        Booking booking = new Booking(paymentName, paymentType, typeRoom, checkIn, checkOut);
                         booking.guestId = guestId;
 
                         OrderRoomTask orderRoom = new OrderRoomTask();
@@ -130,7 +130,7 @@ public class ClientWorker {
                     if (paymentId != null) {
                         vars.put("payment-id", paymentId);
                     }
-                    
+
                     externalTaskService.complete(externalTask, vars);
                 }));
 
@@ -192,15 +192,15 @@ public class ClientWorker {
 
                     PaymentTask paymentTask= new PaymentTask();
 
-                    Booking booking = null;
+                    boolean hasPaid = false;
                     try {
-                        booking = paymentTask.retrieveBookingStatus(Integer.parseInt(bookingId));
+                        hasPaid = paymentTask.retrieveBookingStatus(Integer.parseInt(bookingId));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
 
                     Map<String, Object> vars = new HashMap<>();
-                    vars.put("booking_status", booking.status);
+                    vars.put("has_paid", hasPaid);
 
                     externalTaskService.complete(externalTask, vars);
                 })
