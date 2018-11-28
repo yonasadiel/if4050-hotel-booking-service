@@ -17,6 +17,7 @@ class ListBookingView(views.APIView):
         booking.payment_type = request_serializer.validated_data.get('payment_type', None)
         booking.room_type = request_serializer.validated_data.get('room_type', None)
         booking.guest_id = request_serializer.validated_data.get('guest_id', None)
+        booking.payment_id = request_serializer.validated_data.get('payment_id', None)
         if (booking.check_in >= booking.check_out):
             return Response(dict(
                 code='check_in_check_out_date_failed',
@@ -60,6 +61,7 @@ class DetailBookingView(views.APIView):
                     booking.payment_type = request_serializer.validated_data.get('payment_type', booking.payment_type)
                     booking.room_type = request_serializer.validated_data.get('room_type', booking.room_type)
                     booking.guest_id = request_serializer.validated_data.get('guest_id', booking.guest_id)
+                    booking.payment_id = request_serializer.validated_data.get('payment_id', booking.payment_id)
                     booking.status = new_booking_status
                     booking.update_room()
                     booking.save()
