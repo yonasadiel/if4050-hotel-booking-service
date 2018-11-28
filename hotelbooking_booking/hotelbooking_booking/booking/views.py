@@ -50,12 +50,17 @@ class DetailBookingView(views.APIView):
                     request_serializer = BookingSerializer(data=request.data, partial=True)
                     request_serializer.is_valid(raise_exception=True)
 
+                    new_booking_status = request_serializer.validated_data.get('status', booking.status)
+                    if (new_booking_status == 'PENDING'):
+                        new_booking_status = booking.status
+
                     booking.check_in = request_serializer.validated_data.get('check_in', booking.check_in)
                     booking.check_out = request_serializer.validated_data.get('check_out', booking.check_out)
                     booking.payment_name = request_serializer.validated_data.get('payment_name', booking.payment_name)
                     booking.payment_type = request_serializer.validated_data.get('payment_type', booking.payment_type)
                     booking.room_type = request_serializer.validated_data.get('room_type', booking.room_type)
                     booking.guest_id = request_serializer.validated_data.get('guest_id', booking.guest_id)
+                    booking.status = new_booking_status
                     booking.update_room()
                     booking.save()
                     return Response(BookingSerializer(booking).data)

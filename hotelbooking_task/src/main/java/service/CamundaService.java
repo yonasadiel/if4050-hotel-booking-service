@@ -9,7 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface CamundaService {
-    public String BASE_URL = "http://127.0.0.1:8080/";
+    public String BASE_URL = "http://167.205.35.224:8080/";
 
     @POST("engine-rest/process-definition/key/cancel-booking/start")
     Call<Void> cancelBooking(@Body Container<CancelBookingCamunda> cancelBookingRequest);

@@ -17,6 +17,7 @@ public class Booking {
     public String checkOut;
     @SerializedName("guest_id")
     public int guestId;
+    public String status;
 
     public Booking(String paymentName, String paymentType, long price, int typeRoom, String checkIn, String checkOut) {
         this.paymentName = paymentName;

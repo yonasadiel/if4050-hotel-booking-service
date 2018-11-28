@@ -52,9 +52,9 @@ public class CancelBookingTask {
         }
     }
 
-    public Booking retrieveBookingData(int bookingId) {
+    public Booking retrieveBookingData(int bookingId) throws IOException {
         initService();
-        return bookingService.getBookingById(bookingId);
+        return bookingService.getBookingById(bookingId).execute().body();
     }
 
     public boolean checkCheckinTime(Date checkIn) {
@@ -67,11 +67,11 @@ public class CancelBookingTask {
         // STUB
     }
 
-    public void setBookingStatusAsCancelled(int bookingId) {
+    public void setBookingStatusAsCancelled(int bookingId) throws IOException {
         initService();
         BookingStatusChangeRequest bookingStatusChangeRequest = new BookingStatusChangeRequest();
         bookingStatusChangeRequest.status = BookingStatus.CANCELLED;
-        bookingService.setBookingStatus(bookingId, bookingStatusChangeRequest);
+        bookingService.setBookingStatus(bookingId, bookingStatusChangeRequest).execute();
     }
 
     public void refundPayment(String refundAccount) {

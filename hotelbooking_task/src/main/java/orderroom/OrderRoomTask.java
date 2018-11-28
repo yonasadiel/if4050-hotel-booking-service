@@ -21,7 +21,7 @@ public class OrderRoomTask {
     private CamundaService camundaService;
 
     @WebMethod
-    public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) {
+    public BookingDetail orderRoom(@WebParam(name = "booking") Booking booking, @WebParam(name = "guest") Guest guest) throws IOException {
         initService();
         try {
             camundaService.orderRoom(new Container<>(new OrderRoomCamunda(booking, guest))).execute().body();
@@ -56,26 +56,23 @@ public class OrderRoomTask {
         }
     }
 
-    @WebMethod
-    public Booking createBookingData(@WebParam(name = "booking") Booking booking) {
+    public Booking createBookingData(Booking booking) throws IOException {
         initService();
-        return bookingService.createBooking(booking);
+        return bookingService.createBooking(booking).execute().body();
     }
 
-    @WebMethod
-    public int getGuestId(@WebParam(name = "id_card_number") String idCardNumber) {
+    public int getGuestId(String idCardNumber) {
         initService();
         try {
-            Guest guest = guestService.getGuestByIdCard(idCardNumber);
+            Guest guest = guestService.getGuestByIdCard(idCardNumber).execute().body();
             return guest.id;
         } catch (Exception e) {
             return -1;
         }
     }
 
-    @WebMethod
-    public Guest createGuest(@WebParam(name = "guest") Guest guest) {
+    public Guest createGuest(Guest guest) throws IOException {
         initService();
-        return guestService.createGuest(guest);
+        return guestService.createGuest(guest).execute().body();
     }
 }
