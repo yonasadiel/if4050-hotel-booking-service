@@ -8,7 +8,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface GuestService {
-    public String BASE_URL = "http://localhost:8002/";
+    public String BASE_URL = "http://167.205.35.224:8002/";
 
     @POST("api/guest/?format=json")
     Call<Guest> createGuest(@Body Guest request);

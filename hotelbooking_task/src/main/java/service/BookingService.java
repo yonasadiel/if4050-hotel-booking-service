@@ -7,7 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 public interface BookingService {
-    public String BASE_URL = "http://localhost:8001/";
+    public String BASE_URL = "http://167.205.35.224:8001/";
 
     @POST("api/booking/?format=json")
     Call<Booking> createBooking(@Body Booking booking);
