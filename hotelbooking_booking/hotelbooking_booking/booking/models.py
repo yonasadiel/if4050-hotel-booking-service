@@ -33,6 +33,7 @@ class Booking(models.Model):
     guest_id = models.IntegerField(null=True)
     status = models.CharField(max_length=10, default="PENDING", choices=BOOKING_STATUS_CHOICE)
     date_created = models.DateTimeField(auto_now_add=True, editable=True)
+    payment_id = models.IntegerField(null=True)
 
     def __str__(self):
         return 'Booking %d' % (self.id)
