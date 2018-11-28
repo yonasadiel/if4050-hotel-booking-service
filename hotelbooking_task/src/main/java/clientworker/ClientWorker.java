@@ -112,6 +112,28 @@ public class ClientWorker {
                 })
                 .open();
 
+        client.subscribe("send-payment-information")
+                .lockDuration(10000)
+                .handler(((externalTask, externalTaskService) -> {
+                    String paymentName = externalTask.getVariable("payment-name");
+                    int roomType = Integer.parseInt(externalTask.getVariable("room-type"));
+
+                    OrderRoomTask task = new OrderRoomTask();
+                    String paymentId = null;
+                    try {
+                        paymentId = task.sendPaymentInformation(paymentName, roomType);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Map<String, Object> vars = new HashMap<>();
+                    if (paymentId != null) {
+                        vars.put("payment-id", paymentId);
+                    }
+                    
+                    externalTaskService.complete(externalTask, vars);
+                }));
+
         client.subscribe("check-checkin-time")
                 .lockDuration(10000)
                 .handler((externalTask, externalTaskService) -> {
