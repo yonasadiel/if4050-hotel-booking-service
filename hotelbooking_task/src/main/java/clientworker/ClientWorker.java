@@ -112,6 +112,20 @@ public class ClientWorker {
                 })
                 .open();
 
+        client.subscribe("send-payment-information")
+                .lockDuration(10000)
+                .handler(((externalTask, externalTaskService) -> {
+                    String paymentName = externalTask.getVariable("payment-name");
+                    int roomType = Integer.parseInt(externalTask.getVariable("room-type"));
+
+                    OrderRoomTask task = new OrderRoomTask();
+                    try {
+                        String paymentId = task.sendPaymentInformation(paymentName, roomType);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }));
+
         client.subscribe("check-checkin-time")
                 .lockDuration(10000)
                 .handler((externalTask, externalTaskService) -> {
